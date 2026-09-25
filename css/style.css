@@ -1,0 +1,221 @@
+:root {
+    --cor-primaria: #2563EB;
+    --cor-secundaria: #60A5FA;
+    --cor-fundo: #F3F4F6;
+    --cor-superficie: #FFFFFF;
+    --cor-borda: #9CA3AF;
+    --cor-texto: #1F2937;
+    --cor-sucesso: #16A34A;
+    --cor-erro: #DC2626;
+    --fonte-h1: 40px;
+    --fonte-h2: 32px;
+    --fonte-h3: 24px;
+    --fonte-body: 16px;
+    --fonte-small: 14px;
+    --espaco-1: 4px;
+    --espaco-2: 8px;
+    --espaco-3: 16px;
+    --espaco-4: 24px;
+    --espaco-5: 32px;
+    --espaco-6: 48px;
+    --espaco-7: 64px;
+    }
+body{
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-size: var(--fonte-body);
+
+}
+h1{
+    font-size: var(--fonte-h1);
+}
+h2{
+    font-size: var(--fonte-h2);
+}
+h3{
+    font-size: var(--fonte-h3);
+}
+small{
+    font-size: var(--fonte-small);
+}
+header{
+    background-color: var(--cor-primaria);
+    padding: var(--espaco-4);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+button{
+    background-color: var(--cor-primaria);
+    color: var(--cor-superficie);
+    padding: var(--espaco-2);
+    border: none;
+    transition: opacity 0.3s;
+}
+button:hover{
+    opacity: 0.5;
+}
+button:active{
+    opacity: 0.7;
+}
+button:focus{
+    outline: 2px solid var(--cor-secundaria);
+}
+button:disabled{
+    opacity: 0.5;}
+input:focus{
+    border: 2px solid var(--cor-primaria);
+}
+.card{
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    padding: var(--espaco-4);
+}
+.mensagem-sucesso{
+    color:var(--cor-sucesso);
+}
+.mensagem-erro{
+    color: var(--cor-erro);
+}
+input{
+    background-color: var(--cor-superficie);
+    padding: var(--espaco-3);
+    border: 1px solid var(--cor-borda)
+}
+input:focus{
+  outline: none;
+  border: 2px solid var(--cor-primaria);
+}
+input:focus:invalid {
+    border: 2px solid var(--cor-erro);
+}
+input:focus:valid{
+    border: 2px solid var(--cor-sucesso);
+}
+main{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+form{
+    grid-column: span 8;
+    display:grid;
+    gap: var(--espaco-3);
+}
+fieldset{
+    display: grid;
+    gap: var(--espaco-3);
+}
+@media(max-width:1200px){
+    form{
+        grid-column: span 9;
+    }
+}
+@media(max-width:992px){
+    form{
+        grid-column: span 10;
+    }
+}
+@media (max-width:768px){
+    form{
+        grid-column: span 12;
+    }
+}
+@media(max-width:576px){
+   button{
+    width: 100%;
+}
+   } 
+@media(max-width:400px){
+    header{
+        padding: var(--espaco-2);
+    }
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-2);
+}
+li ul{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    background-color: var(--cor-fundo);
+    padding: var(--espaco-3);
+    min-width: 180px;
+}
+li:hover ul{
+   opacity: 1;
+   visibility: visible;
+}
+li{
+    position: relative;
+}
+nav ul{
+    list-style: none;
+    padding: 0;
+
+}
+nav>ul{
+    display: flex;
+    gap:16px;
+}
+details{
+    display: none;
+}
+details ul{
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+details[open] ul{
+    opacity: 1;
+}
+@media(max-width:768px){
+    details{
+        display: block;
+    }
+    nav>ul{
+        display: none;
+    }
+}
+.badge{
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    border: 2px solid var(--cor-borda);
+    padding: var(--espaco-2);
+    border-radius: 8px;
+}
+.alert{
+    grid-column: span 8;
+    background-color: var(--cor-sucesso);
+    color: var(--cor-superficie);
+    padding: var(--espaco-2);
+    border: 2px solid var(--cor-borda);
+    border-radius: 8px;
+}
+.alert-erro{
+    background-color: var(--cor-erro);}
+.toast{
+    background-color: var(--cor-sucesso);
+    color: var(--cor-superficie);
+    padding: var(--espaco-2);
+    border: 2px solid var(--cor-borda);
+    border-radius: 10px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.toast.visivel{
+    opacity: 1;
+}
