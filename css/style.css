@@ -219,3 +219,6 @@ details[open] ul{
 .toast.visivel{
     opacity: 1;
 }
+li a{
+    color: var(--cor-texto);
+}
