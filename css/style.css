@@ -103,7 +103,19 @@ main{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
 }
+
+#app section{
+    grid-column: span 6;
+    display: flex;
+    gap: 65px;
+    padding: 32px;
+    align-items: center;
+}
+#app section img{
+    width: 65%;
+}
 form{
+
     grid-column: span 8;
     display:grid;
     gap: var(--espaco-3);
