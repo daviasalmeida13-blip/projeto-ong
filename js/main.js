@@ -68,6 +68,7 @@ const templates={
         <div class="toast">Cadastro realizado com sucesso!</div>`
 };
 const app= document.getElementById("app");
+// Responsável por identificar a rota atual e renderizar o template correspondente.
 function renderizar(){
 let rota=location.hash.slice(1)
 if(rota===""){
